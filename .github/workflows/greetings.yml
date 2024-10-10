@@ -19,6 +19,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: 'hitachi-genai/deployment-manifests'
-        token: ${{ secrets.GITHUB_TOKEN }}
-        path: '.'
+        ref: ${{ inputs.full_ref }}
+        token: ${{ secrets.ARC_GITHUB_TOKEN }}
+        path: './deployment-manifests'
 
