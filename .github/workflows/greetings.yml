@@ -20,6 +20,7 @@ jobs:
       with:
         repository: 'hitachi-genai/deployment-manifests'
         ref: ${{ inputs.full_ref }}
-        token: ${{ secrets.ARC_GITHUB_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
         path: './deployment-manifests'
 
