@@ -15,11 +15,3 @@ jobs:
         issue-message: "Message that will be displayed on users' first issue"
         pr-message: "Message that will be displayed on users' first pull request"
 
-    - name: Checkout DeployManifest repository
-      uses: actions/checkout@v2
-      with:
-        repository: 'hitachi-genai/deployment-manifests'
-        ref: 'main'
-        token: ${{ secrets.GITHUB_TOKEN }}
-        path: './deployment-manifests'
-
