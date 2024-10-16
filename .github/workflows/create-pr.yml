@@ -3,6 +3,10 @@ on:
   push:
     branches:
       - br-*
+
+env:
+  github-token: "${{ secrets.GITHUB_TOKEN }}"
+ 
 jobs:
   productionPromotion:
     runs-on: ubuntu-latest
@@ -18,7 +22,3 @@ jobs:
       - name: Create PR
         run: |
             gh pr create --base main --head new_branch -l "auto-merge" --title "Bump hash versi on environment" --body ""
-        env:
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
-
- 
