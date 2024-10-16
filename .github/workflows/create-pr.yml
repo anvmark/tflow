@@ -19,4 +19,4 @@ jobs:
             gh pr create --base main --head `git rev-parse --abbrev-ref HEAD` -l "auto-merge" --title "Bump hash versi on environment" --body ""
 
       - name: Enable Pull Request Automerge
-        run: gh pr merge --merge --auto "auto-merge"
+        run: gh pr merge --merge --auto "main"
