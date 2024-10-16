@@ -7,5 +7,5 @@ jobs:
   productionPromotion:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout mycode
       - uses: actions/checkout@v4
+      - name: Checkout mycode
