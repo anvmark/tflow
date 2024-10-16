@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: Appr
+        run: |
+            pwd
 
      - name: Checkout repository
         uses: actions/checkout@v2
