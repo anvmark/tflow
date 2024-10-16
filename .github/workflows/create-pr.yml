@@ -21,4 +21,4 @@ jobs:
 
       - name: Create PR
         run: |
-            gh pr create --base main --head new_branch -l "auto-merge" --title "Bump hash versi on environment" --body ""
+            gh pr create --base main --head `git rev-parse --abbrev-ref HEAD` -l "auto-merge" --title "Bump hash versi on environment" --body ""
