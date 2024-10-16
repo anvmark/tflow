@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: automergeapprove
+          ref: main
       - name: Reset promotion branch
         run: |
           git fetch origin main:main
