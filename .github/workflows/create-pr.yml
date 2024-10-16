@@ -15,3 +15,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Create PR
+        run: |
+            gh pr create --base main --head new_branch -l "auto-merge" --title "Bump hash versi on environment" --body ""
+ 
