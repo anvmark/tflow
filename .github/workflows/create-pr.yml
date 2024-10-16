@@ -7,13 +7,20 @@ jobs:
   productionPromotion:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main
-      - name: Reset promotion branch
-        run: |
-          git fetch origin main:main
+      - uses: actions/checkout@v3
+
+      # Make changes to pull request here
+
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v7
+        id: cpr
+        uses: peter-evans/create-pull-request@v3
         with:
-          branch: production-promotion
+          token: ${{ secrets.PAT }}
+
+      - name: Enable Pull Request Automerge
+        if: steps.cpr.outputs.pull-request-operation == 'created'
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          token: ${{ secrets.PAT }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+          merge-method: squash
