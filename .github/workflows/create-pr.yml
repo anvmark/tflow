@@ -11,12 +11,7 @@ jobs:
   productionPromotion:
     runs-on: ubuntu-latest
     steps:
-     - name: Appr
-       run: |
-         echo "app-name: "
-         echo "image-version: "
-
-     - name: Checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v2
 
       - name: Create PR
