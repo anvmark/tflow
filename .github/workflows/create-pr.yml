@@ -5,7 +5,7 @@ on:
       - br-*
 
 env:
-  github-token: "${{ secrets.GITHUB_TOKEN }}"
+  GH_TOKEN: ${{ github.token }}
  
 jobs:
   productionPromotion:
