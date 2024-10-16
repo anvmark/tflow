@@ -12,8 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: Appr
-        run: |
-            pwd
+       run: |
+         echo "app-name: "
+         echo "image-version: "
 
      - name: Checkout repository
         uses: actions/checkout@v2
